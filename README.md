@@ -1,13 +1,13 @@
   <div align="center">
 <p align="center">
- <img title="Nets3e" src='https://img.shields.io/badge/Nets3e-1.1.3-brightgreen.svg' />
+ <img title="Nets3e" src='https://img.shields.io/badge/Nets3e-1.1.4-brightgreen.svg' />
  <img title="Nets3e" src='https://img.shields.io/badge/Python-3.9-yellow.svg' />
   <img title="Nets3e" src='https://img.shields.io/badge/HackerTool-x' />
  <img title="Nets3e" src='https://img.shields.io/static/v1?label=Author&message=@Martin&color=red'/>
  <img title="Nets3e" src='https://img.shields.io/badge/-windows-F16061?logo=windows&logoColor=000'/>
- </p>
-  <img height="137px" src="https://github-readme-stats.vercel.app/api?username=MartinXMax&hide_title=true&hide_border=true&show_icons=trueline_height=21&text_color=000&icon_color=000&bg_color=0,ea6161,ffc64d,fffc4d,52fa5a&theme=graywhite" />
-  
+<img title="Nets3e" src='https://img.shields.io/badge/-Linux-F16061?logo=Linux&logoColor=000'/>
+</p>
+ 
    
  <table>
   <tr>
@@ -15,8 +15,8 @@
   </tr>
   <tr>
     <th>Fixed the issue where the victim was unable to access the public IP address[NEW]</th>
-    <th>Share data with DingTalk [NEW]</th>
-
+    <th>Share data with DingTalk</th>
+    <th>Selectively showing victims their own photos [NEW]</th>
 </tr>
  
  </table>
@@ -94,3 +94,9 @@ _Nets3eClient_release.exe -> The release version of public network attacks is ma
 ![图片名称](./PT/getip.png) 
 
 ![图片名称](./PT/ip.png) 
+
+
+## -echo The victim will see their own photo
+
+
+![图片名称](./PT/echo.png) 
