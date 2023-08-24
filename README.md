@@ -7,7 +7,9 @@
  <img title="Nets3e" src='https://img.shields.io/badge/-windows-F16061?logo=windows&logoColor=000'/>
 <img title="Nets3e" src='https://img.shields.io/badge/-Linux-F16061?logo=Linux&logoColor=000'/>
 </p>
- 
+    
+ [![Nets3e](https://res.cloudinary.com/marcomontalbano/image/upload/v1692868309/video_to_markdown/images/youtube--v0dYFhAVOCg-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=v0dYFhAVOCg "Nets3e")
+
    
  <table>
   <tr>
